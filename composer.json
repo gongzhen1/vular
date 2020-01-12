@@ -1,6 +1,6 @@
 {
     "name": "vularsoft/vular",
-    "description": "Vuetiy and Laravel Framework",
+    "description": "Vuetify and Laravel Framework",
     "type": "library",
     "license": "MIT",
     "authors": [
