@@ -1,0 +1,811 @@
+import dialog from './dialog';
+
+const formPage =  {
+  vularId:'p05435325349',//Page唯一标识
+  schema:{
+    name:'v-container',
+    children:[
+      {
+        name:'v-form',
+        children:[
+          {
+            name:'v-layout',
+            props: {
+                'row':true,
+                'class':'align-center',
+            },
+            children:[
+              {
+                name:'v-icon',
+                props: {
+                    'small':true,
+                },
+                content:'home',
+              },
+              {
+                name:'v-breadcrumbs',
+                props:{
+                  divider:'-'
+                },
+                items: [
+                    {
+                      text: 'Dashboard',
+                      disabled: false,
+                      href: 'breadcrumbs_dashboard'
+                    },
+                    {
+                      text: 'Link 1',
+                      disabled: false,
+                      href: 'breadcrumbs_link_1'
+                    },
+                    {
+                      text: 'Link 2',
+                      disabled: true,
+                      href: 'breadcrumbs_link_2'
+                    }
+                ],
+              },
+              {
+                name:'v-spacer',
+              },
+            ],
+          },
+          {
+            name:"v-layout",
+            props:{
+              row:true,
+              wrap:true,
+              class:"pa-2 pb-4",
+            },
+            children:[
+              {
+                name:"v-text-field",
+                field:'name',
+                props:{
+                  label:"Name" ,
+                  required:true,
+                  style:"font-size: 30px;"
+                },
+              },
+              {
+                name:'v-spacer',
+              },
+              {
+                name:'v-btn',
+                props:{
+                  round:true,
+                  large:true,
+                  light:true,
+                  class:"hidden-sm-and-down",
+                },
+                content:'Cancel',
+              },
+              {
+                name:'v-btn',
+                props:{
+                  round:true,
+                  large:true,
+                  light:true,
+                  class:"hidden-sm-and-down",
+                  color:'primary',
+                },
+                content:'Save',
+              },
+              {
+                name:'v-btn',
+                props:{
+                  fab:true,
+                  small:true,
+                  light:true,
+                  class:"hidden-sm-and-down",
+                },
+                children:[
+                  {
+                    name:"v-icon",
+                    content:'more_horiz',
+                  }
+                ],
+              },
+            ],
+          },
+          {
+            name:'v-layout',
+            props:{
+              row:true,
+            },
+            children:[
+              {
+                name:'v-flex',
+                props:{
+                  class:"pr-4 lg8",
+                },
+                children:[
+                  {
+                    name:'vular-image-select',
+                  },
+                  {
+                    name:"v-card",
+                    props:{
+                      style:"border-radius:10px;",
+                      'class':"mt-5",
+                    },
+                    children:[
+                      {
+                        name:'v-toolbar',
+                        props:{
+                          color:"transparent",
+                          flat:true,
+                          card:true,
+                        },
+                        children:[
+                          {
+                            name:"v-toolbar-title",
+                            props:{
+                              style:"font-weight: 300;",
+                            },
+                            content:'基本信息',
+                          },
+                        ]
+                      },
+                      {
+                        name:'v-divider',
+                      },
+                      {
+                        name:'v-card-text',
+                        children:[
+                          {
+                            name:'v-layout',
+                            props:{
+                              row:true,
+                              wrap:true,
+                              class:"pl-3 pr-3",
+                            },
+                            children:[
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    field:'name',
+                                    props:{
+                                      label:'产品名称 *',
+                                      required:true,
+                                      rules:[
+                                        v => !!v || 'Name is required',
+                                        v => v.length <= 50 || '名称必须少于50个字符'
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'Slug',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-combobox',
+                                    props:{
+                                      label:'产品分类',
+                                      'multiple':true,
+                                      chips:true,
+                                    },
+                                    items: [
+                                      '甜味剂',
+                                      '增稠剂',
+                                      'Vue',
+                                      'Vuetify'
+                                    ],
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'认证信息',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'sm6  lg6 pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'纯度',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'级别',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'规格',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'包装',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'产能',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'交货期',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'最小订单',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'HS编码',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-combobox',
+                                    props:{
+                                      label:'价格类型',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'价格',
+                                      value:"10.00",
+                                      prefix:"$",
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pr-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'库存',
+                                      hint:"Hint text",
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:' sm6  lg6  pl-3',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'产品百科',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-textarea',
+                                    props:{
+                                      label:'简介',
+                                      rows:'4',
+                                      value:"The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through.",
+                                      hint:"Hint text",
+                                    },
+                                  },
+                                ],
+                              },
+
+
+                            ],
+                          }
+                        ],
+                      },
+                    ],
+                  },
+
+                  {
+                    name:"v-card",
+                    props:{
+                      style:"border-radius:10px;",
+                      'class':"mt-5",
+                    },
+                    children:[
+                      {
+                        name:'v-toolbar',
+                        props:{
+                          color:"transparent",
+                          flat:true,
+                          card:true,
+                        },
+                        children:[
+                          {
+                            name:"v-toolbar-title",
+                            field:'seometas',
+                            props:{
+                              style:"font-weight: 300;",
+                            },
+                            content:'SEO Meta',
+                          },
+                        ]
+                      },
+                      {
+                        name:'v-divider',
+                      },
+                      {
+                        name:'v-card-text',
+                        children:[
+                          {
+                            name:'v-layout',
+                            props:{
+                              row:true,
+                              wrap:true,
+                              class:"pl-3 pr-3",
+                            },
+                            children:[
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    field:'seometas.title',
+                                    props:{
+                                      label:'title',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-textarea',
+                                    field:'seometas.keywords',
+                                    props:{
+                                      label:'Key Words',
+                                      rows:'2',
+                                      value:"",
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-textarea',
+                                    field:'seometas.description',
+                                    props:{
+                                      label:'Description',
+                                      rows:'3',
+                                      value:"",
+                                    },
+                                  },
+                                ],
+                              },
+
+
+                            ],
+                          }
+                        ],
+                      },
+                    ],
+                  },
+
+                  {
+                    name:"v-card",
+                    props:{
+                      style:"border-radius:10px;height: 590px;",
+                      'class':"mt-5",
+                    },
+                    children:[
+                      {
+                        name:'v-toolbar',
+                        props:{
+                          color:"transparent",
+                          flat:true,
+                          card:true,
+                        },
+                        children:[
+                          {
+                            name:"v-toolbar-title",
+                            props:{
+                              style:"font-weight: 300;",
+                            },
+                            content:'产品描述',
+                          },
+                        ]
+                      },
+                      {
+                        name:'v-divider',
+                      },
+                      {
+                        name:'v-card-text',
+                        children:[
+                          {
+                            name:'v-layout',
+                            props:{
+                              row:true,
+                              wrap:true,
+                              class:"pl-3 pr-3",
+                            },
+                            children:[
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg12',
+                                },
+                                children:[
+                                  {
+                                    name:'quill-editor',
+                                    props:{
+                                      style:"height : 420px",
+                                      content:'Compose Epic Story...',
+                                    },
+                                  },
+                                ],
+                              },
+
+
+                            ],
+                          }
+                        ],
+                      },
+                    ],
+                  },
+
+                ],
+              },
+              {
+                name:'v-flex',
+                props:{
+                  class:"lg4 hidden-sm-and-down",
+                },
+
+                children:[
+                 {
+                    name:"v-card",
+                    props:{
+                      style:"border-radius:10px",
+                    },
+                    children:[
+                      {
+                        name:'v-toolbar',
+                        props:{
+                          color:"transparent",
+                          flat:true,
+                          card:true,
+                        },
+                        children:[
+                          {
+                            name:"v-toolbar-title",
+                            props:{
+                              style:"font-weight: 300;",
+                            },
+                            content:'外观',
+                          },
+                        ]
+                      },
+                      {
+                        name:'v-divider',
+                      },
+                      {
+                        name:'v-card-text',
+                        children:[
+                          {
+                            name:'v-layout',
+                            props:{
+                              row:true,
+                              wrap:true,
+                              class:'pl-3 pr-3'
+                            },
+                            children:[
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg8 sm12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-switch',
+                                    props:{
+                                      label:'首页展示',
+                                    },
+                                  },
+                                ],
+                              },
+
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg8 sm12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-combobox',
+                                    props:{
+                                      label:'模板',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg8 sm12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-text-field',
+                                    props:{
+                                      label:'顺序',
+                                    },
+                                  },
+                                ],
+                              },
+                              {
+                                name:'v-flex',
+                                props:{
+                                  class:'lg8 sm12',
+                                },
+                                children:[
+                                  {
+                                    name:'v-switch',
+                                    props:{
+                                      label:'发布',
+                                    },
+                                  },
+                                ],
+                              },
+
+                            ],
+                          }
+                        ],
+                      },
+                    ],
+                 },
+                 {
+                    name:"v-card",
+                    props:{
+                      style:"border-radius:10px",
+                      class:"mt-5",
+                    },
+                    children:[
+                      {
+                        name:'v-toolbar',
+                        props:{
+                          color:"transparent",
+                          flat:true,
+                          card:true,
+                        },
+                        children:[
+                          {
+                            name:"v-toolbar-title",
+                            props:{
+                              style:"font-weight: 300;",
+                            },
+                            content:'附加信息',
+                          },
+                        ]
+                      },
+                      {
+                        name:'v-divider',
+                      },
+                      {
+                        name:'v-card-text',
+                        children:[
+                          {
+                            name:'v-list',
+                            props:{
+                              dense:true,
+                              class:'pt-0'
+                            },
+                            children:[
+                              dialog,
+                            ],
+                          }
+                        ],
+                      },
+                    ],
+                 },
+
+                ],
+              },
+            ],
+          },
+          {
+            name:'v-divider',
+            props:{
+              'class':'mt-5',
+            },
+          },
+          {
+            name:'v-layout',
+            props:{
+              row:true,
+              wrap:true,
+              class:"pb-4 pt-4",
+            },
+            children:[
+              {
+                name:'v-spacer',
+              },
+              {
+                name:"v-btn",
+                props:{
+                  round:true,
+                  large:true,
+                  light:true,
+                },
+                content:'Cancel',
+              },
+              {
+                name:"v-btn",
+                props:{
+                  round:true,
+                  large:true,
+                  light:true,
+                  color:'primary',
+                },
+                content:'Save',
+              },
+            ],
+          },
+        ], 
+      },
+    ],
+  },
+
+  data:{
+    vularId:'fm123',
+    name:'name test',
+    ogmetas:{
+      form:{
+        vularId:'fm897',
+        product_id:'100',
+        name:'og name',
+        age:'18-29',
+      },
+      output_value:'',
+    },
+    'seometas.title':'Seo Title',
+    'seometas.keywords':' Seo Key words',
+    'seometas.description':' SEO Description',
+    
+  },
+};
+
+export default formPage;

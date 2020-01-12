@@ -1,0 +1,23 @@
+{
+    "name": "vularsoft/vular",
+    "description": "Vuetiy and Laravel Framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Water Li",
+            "email": "11011968@qq.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Water\\Vular\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Water\\Vular\\Tests\\": "tests/"
+        }
+    }
+}

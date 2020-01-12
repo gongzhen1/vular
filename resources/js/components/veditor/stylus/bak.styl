@@ -1,0 +1,80 @@
+.element-outline
+  outline:dashed #BBDEFB 1px
+
+element-list = "v-app" "v-navigation-drawer" "v-toolbar" "v-content" "v-footer" "v-container" "v-layout" "v-flex"
+
+for element in element-list
+  .container-element-{element}
+    position:relative;
+  
+  .container-element-{element}::before
+    background-color: #E3F2FD;
+    border: 1px solid #DDDDDD;
+    color: #9DA0A4;
+    content: element;
+    font-size: 11px;
+    font-weight: bold;
+    left: -1px;
+    line-height: 16px;
+    padding: 3px 7px;
+    position: absolute;
+    height:22px;
+    top: 0px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+
+  .drag-over-{element}
+      outline: #F06292 solid 1px;
+      position:relative;
+
+  .drag-over-{element}::before
+    background-color: #F06292;
+    color: #ffffff;
+    content: element;
+    font-size: 11px;
+    font-weight: bold;
+    left: -1px;
+    line-height: 16px;
+    padding: 3px 7px;
+    position: absolute;
+    height:22px;
+    top: 0px;
+    
+  .mouse-over-{element}
+      outline: #1E88E5 solid 1px;
+      position:relative;
+
+
+  .mouse-over-{element}::before
+    background-color: #1E88E5;
+    color: #ffffff;
+    content: element;
+    font-size: 11px;
+    font-weight: bold;
+    left: -1px;
+    line-height: 16px;
+    padding: 3px 7px;
+    position: absolute;
+    height:22px;
+    top: 0px;
+    border:0px;
+
+  .focus-{element}
+      outline: #1E88E5 solid 3px;
+      position:relative;
+
+
+  .focus-{element}::before
+    background-color: #1E88E5;
+    color: #ffffff;
+    //content: element;
+    font-size: 11px;
+    font-weight: bold;
+    left: -2px;
+    line-height: 16px;
+    padding: 3px 7px;
+    position: absolute;
+    height:22px;
+    top: 0px;
+    border:0px;

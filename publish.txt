@@ -1,0 +1,31 @@
+php artisan vendor:publish --provider=Water\Vular\Providers\VularServiceProvider --force
+
+composer require intervention/image
+
+linux下必须加引号
+php artisan vendor:publish --provider="Water\Vular\Providers\VularServiceProvider" --force
+
+php artisan db:seed
+
+
+php artisan make:migration create_users_table --create=users
+
+
+//安装Passport OAuth 认证
+composer require laravel/passport
+php artisan migrate
+php artisan passport:install
+
+	C:\xampp\htdocs\water>php artisan passport:install
+	Encryption keys generated successfully.
+	Personal access client created successfully.
+	Client ID: 1
+	Client secret: YfXA9liLbpqVpeJBQaxSoZjqLf0hTjZOepFQ1pIO
+	Password grant client created successfully.
+	Client ID: 2
+	Client secret: 8NNzs7ewjPXIxtKqgScRmweNzDTPP52l40MyJCf1
+
+//-->这个步骤暂时不需要
+//-->接下来，在 AuthServiceProvider 的 boot 方法中调用 Passport::routes //-->函数。这个函数会注册发出访问令牌并撤销访问令牌、客户端和个人访问令牌所必需的路由
+
+将配置文件 config/auth.php 中授权看守器 guards 的 api 的 driver 选项改为 passport
