@@ -5,6 +5,7 @@ namespace Water\Vular\Providers;
 use Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
+use Water\Vular\Commands\Install;
 
 class VularServiceProvider extends ServiceProvider {
 
@@ -25,11 +26,22 @@ class VularServiceProvider extends ServiceProvider {
                 ->group($this->baseDir . 'routes/api.php');
         });
 
+        //$this->loadMigrationsFrom(__DIR__.'/path/to/migrations');
+
         //$this->loadTranslationsFrom($this->baseDir . 'resources/lang', 'vular');
 
         /*Load migrations*/
         //$this->loadMigrationsFrom($this->baseDir . 'database/migrations');
         $this->loadViewsFrom($this->baseDir . 'resources/views', 'vular');
+
+        $this->loadMigrationsFrom($this->baseDir.'database/migrations/');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                Install::class
+            ]);
+        }
+
 
         $this->publishes([
             $this->baseDir.'public/css' => public_path('vular/css'),
@@ -45,9 +57,9 @@ class VularServiceProvider extends ServiceProvider {
             $this->baseDir.'public/fonts' => public_path('fonts'),
         ], 'public');
 
-        $this->publishes([
-            $this->baseDir.'database/migrations/' => database_path('migrations')
-        ], 'migrations');
+        //$this->publishes([
+        //    $this->baseDir.'database/migrations/' => database_path('migrations')
+        //], 'migrations');
 
         $this->publishes([
             $this->baseDir.'database/seeds/' => database_path('seeds')
@@ -70,6 +82,7 @@ class VularServiceProvider extends ServiceProvider {
             //    __DIR__.'/../../config/auth.php', 'auth'
             //);
         //}
+
       
      }
 

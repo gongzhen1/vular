@@ -19,5 +19,15 @@
         "psr-4": {
             "Water\\Vular\\Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Water\\Vular\\Providers\\VularServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
     }
 }
