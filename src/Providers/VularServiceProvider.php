@@ -81,9 +81,9 @@ class VularServiceProvider extends VularBaseServiceProvider {
     {
         $this->baseDir = __DIR__ .'/../../';
         $router = $this->app['router'];
-        $this->mergeConfigFrom(
-            $this->baseDir.'config/vular.php', 'vular'
-        );
+        //$this->mergeConfigFrom(
+        //    $this->baseDir.'config/vular.php', 'vular'
+        //);
 
     }
 

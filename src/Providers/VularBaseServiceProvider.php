@@ -11,6 +11,7 @@ class VularBaseServiceProvider extends ServiceProvider {
     
     protected function registerMenuItem($item){
         $menus = config('vular.menus');
+        if(!$menus) return;
         $position = sizeof($menus) - 2;
         if(array_search($item, $menus)){
             return;
