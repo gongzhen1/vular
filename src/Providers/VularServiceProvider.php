@@ -3,14 +3,12 @@
 namespace Water\Vular\Providers;
 
 use Event;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Route;
 use Water\Vular\Commands\Install;
 
-class VularServiceProvider extends ServiceProvider {
+class VularServiceProvider extends VularBaseServiceProvider {
 
     protected $namespace = 'Water\Vular\Http\Controllers';
-    protected $baseDir = '';
 
 
     public function boot() 
@@ -62,19 +60,11 @@ class VularServiceProvider extends ServiceProvider {
         //], 'migrations');
 
         $this->publishes([
-            $this->baseDir.'database/seeds/' => database_path('seeds')
-        ], 'seeds');
-
-        $this->publishes([
-            $this->baseDir.'database/factories/' => database_path('factories')
-        ], 'factories');
-
-        $this->publishes([
             $this->baseDir.'resources/lang/' => resource_path('lang'),
         ]);
 
         $this->publishes([
-            $this->baseDir.'config/vular-admin.php' => config_path('vular-admin.php'),
+            $this->baseDir.'config/vular.php' => config_path('vular.php'),
         ]);
         
         //if (! $this->app->configurationIsCached()) {
@@ -91,13 +81,10 @@ class VularServiceProvider extends ServiceProvider {
     {
         $this->baseDir = __DIR__ .'/../../';
         $router = $this->app['router'];
-        //$router->aliasMiddleware('auth.admin', \Water\Vular\Http\Middleware\Authenticate::class);
-        //$router->prependMiddlewareToGroup('api',
-        //    \App\Http\Middleware\EncryptCookies::class
-        //);
-        //$router->prependMiddlewareToGroup('api',
-        //    \Illuminate\Session\Middleware\StartSession::class
-        //);
+        $this->mergeConfigFrom(
+            $this->baseDir.'config/vular.php', 'vular'
+        );
+
     }
 
 

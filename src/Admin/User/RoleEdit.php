@@ -64,7 +64,7 @@ class RoleEdit extends SimpleFormPage{
 
     function permissions(){
         $permissions = [];
-        $permissionClasses = config('vular-admin.permissions');
+        $permissionClasses = config('vular.permissions');
         foreach ($permissionClasses as $permissionClass) {
            $permissions = array_merge_recursive($permissions, (new $permissionClass)->toNodes());
         }

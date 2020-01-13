@@ -13,7 +13,7 @@
 
         <script type="text/javascript">
             window.host = "{{((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https:' : 'http:'}}//{{$_SERVER['HTTP_HOST']}}/api/vular/v1/";
-            window.indexPage = '{{Water\Vular\PreMades\Trades\Dashboard\Page::make()->pageId()}}'
+            window.indexPage = '{{Water\Vular\Admin\Dashboard\Page::make()->pageId()}}'
 
             window.mediasApi = '{{mediasApi()}}'
             window.uploadMediaApi = '{{uploadMediaApi()}}'

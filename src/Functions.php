@@ -98,7 +98,7 @@ if (! function_exists('saveMediaCateogriesApi')) {
 if (! function_exists('post_media_size')) {
     function post_media_size()
     {
-    	$configFile = config('vular-admin.admin-config');
+    	$configFile = config('vular.admin-config');
     	return config($configFile.'.'.'post-media-size');
         //return auth()->guard('api')->user();
     }
@@ -107,7 +107,7 @@ if (! function_exists('post_media_size')) {
 if (! function_exists('post_media_thumb_size')) {
     function post_media_thumb_size()
     {
-    	$configFile = config('vular-admin.admin-config');
+    	$configFile = config('vular.admin-config');
     	return config($configFile.'.'.'post-media-thumb-size');
         //return auth()->guard('api')->user();
     }
@@ -116,7 +116,7 @@ if (! function_exists('post_media_thumb_size')) {
 if (! function_exists('page_media_size')) {
     function page_media_size()
     {
-        $configFile = config('vular-admin.admin-config');
+        $configFile = config('vular.admin-config');
         return config($configFile.'.'.'page-media-size');
         //return auth()->guard('api')->user();
     }
@@ -125,7 +125,7 @@ if (! function_exists('page_media_size')) {
 if (! function_exists('page_media_thumb_size')) {
     function page_media_thumb_size()
     {
-        $configFile = config('vular-admin.admin-config');
+        $configFile = config('vular.admin-config');
         return config($configFile.'.'.'page-media-thumb-size');
         //return auth()->guard('api')->user();
     }
@@ -134,7 +134,7 @@ if (! function_exists('page_media_thumb_size')) {
 if (! function_exists('web_config')) {
     function web_config($name)
     {
-        $configFile = config('vular-admin.admin-config');
+        $configFile = config('vular.admin-config');
         return config($configFile.'.'.$name);
         //return auth()->guard('api')->user();
     }
@@ -144,7 +144,7 @@ if (! function_exists('web_config')) {
 if (! function_exists('theme_dir')) {
     function theme_dir()
     {
-        return config('vular-admin.admin-config');
+        return config('vular.admin-config');
         //return auth()->guard('api')->user();
     }
 }

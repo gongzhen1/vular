@@ -40,7 +40,7 @@ class Vular{
 
     function menus(){
         $vularNods = [];
-        $menuClasses = config('vular-admin.menus');
+        $menuClasses = config('vular.menus');
         foreach ($menuClasses as $menuClass) {
            $vularNods = array_merge_recursive($vularNods, (new $menuClass)->toVular());
         }
