@@ -95,6 +95,7 @@ if (! function_exists('saveMediaCateogriesApi')) {
 	}
 }
 
+/*
 if (! function_exists('post_media_size')) {
     function post_media_size()
     {
@@ -141,12 +142,12 @@ if (! function_exists('web_config')) {
 }
 
 
-if (! function_exists('theme_dir')) {
-    function theme_dir()
+if (! function_exists('theme')) {
+    function theme()
     {
-        return config('vular.admin-config');
+        return config('webtheme.theme');
         //return auth()->guard('api')->user();
     }
-}
+}*/
 
 

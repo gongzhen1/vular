@@ -17,6 +17,6 @@ return [
         //Water\Vular\Admin\User\Permission::class,
     ],
     //'admin-config'=>'harvest',
-    'admin-config'=>'warmy',
+    //'admin-config'=>'warmy',
     //'admin-config'=>'testpools',
 ];
