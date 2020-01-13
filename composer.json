@@ -14,6 +14,7 @@
         "psr-4": {
             "Water\\Vular\\": "src/"
         }
+
     },
     "autoload-dev": {
         "psr-4": {
