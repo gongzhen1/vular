@@ -16,6 +16,7 @@ return [
         //Water\Vular\PreMades\Trades\Common\Permission::class,
         //Water\Vular\Admin\User\Permission::class,
     ],
+    'debug'=>true,
     //'admin-config'=>'harvest',
     //'admin-config'=>'warmy',
     //'admin-config'=>'testpools',
