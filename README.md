@@ -1,7 +1,7 @@
 安装：
-
 php artisan cache:clear
 php artisan config:clear
+
 php artisan migrate
 php artisan passport:install
 php artisan vular:install
