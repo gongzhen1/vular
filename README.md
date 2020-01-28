@@ -1,4 +1,6 @@
 安装：
+复制：.env, composer.json, app.php, auth.php
+
 php artisan cache:clear
 php artisan config:clear
 
