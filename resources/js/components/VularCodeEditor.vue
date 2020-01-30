@@ -1,6 +1,6 @@
 <template>
   
-   <prism-editor v-model="inputValue" language="js" :line-numbers="lineNumbers" class="my-editor" />
+   <prism-editor v-model="inputValue" language="html" :line-numbers="lineNumbers" class="my-editor" />
   
 </template>
 
@@ -37,6 +37,10 @@ export default {
 <style>
 .my-editor{
   height: 600px;
+}
+
+code{
+  white-space: pre-wrap !important;
 }
 </style>
 

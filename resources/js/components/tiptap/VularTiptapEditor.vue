@@ -10,16 +10,16 @@
       >
         <form class="menububble__form" v-if="linkMenuIsActive" @submit.prevent="setLinkUrl(commands.link, linkUrl)">
           <input class="menububble__input" type="text" v-model="linkUrl" placeholder="https://" ref="linkInput" @keydown.esc="hideLinkMenu"/>
-          <button class="menububble__button" @click="setLinkUrl(commands.link, linkUrl)" type="button">
+          <button type='button' class="menububble__button" @click="setLinkUrl(commands.link, linkUrl)">
             <v-icon color="white">check_circle_outline</v-icon>
           </button>
-          <button class="menububble__button" @click="hideLinkMenu" type="button">
+          <button type='button' class="menububble__button" @click="hideLinkMenu">
             <v-icon color="white">highlight_off</v-icon>
           </button>
         </form>
 
         <template v-else>
-          <button
+          <button type='button'
             @click="showLinkMenu(getMarkAttrs('link'))"
             :class="{ 'is-active': isActive.link(),'pr-2':true }"
           >
@@ -27,7 +27,7 @@
             <v-icon v-if="isActive.link()" color="white" class="">edit</v-icon>
             <v-icon v-else color="white" class="ml-2">link</v-icon>
           </button>
-          <button v-if="isActive.link()" class="menububble__button" @click="setLinkUrl(commands.link, null)" type="button">
+          <button type='button' v-if="isActive.link()" class="menububble__button" @click="setLinkUrl(commands.link, null)">
             
             <v-icon color="white">link_off</v-icon>
           </button>
@@ -64,7 +64,7 @@
             </v-menu>
           
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.bold() }"
             @click="commands.bold"
@@ -72,7 +72,7 @@
             <v-icon color="black">format_bold</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.italic() }"
             @click="commands.italic"
@@ -80,7 +80,7 @@
             <v-icon color="black">format_italic</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.strike() }"
             @click="commands.strike"
@@ -88,7 +88,7 @@
             <v-icon color="black">format_strikethrough</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.underline() }"
             @click="commands.underline"
@@ -96,14 +96,14 @@
             <v-icon color="black">format_underlined</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.code() }"
             @click="commands.code"
           >
             <v-icon color="black">code</v-icon>
           </button>
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.bullet_list() }"
             @click="commands.bullet_list"
@@ -111,7 +111,7 @@
             <v-icon color="black">format_list_bulleted</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.ordered_list() }"
             @click="commands.ordered_list"
@@ -119,7 +119,7 @@
             <v-icon color="black">format_list_numbered</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.blockquote() }"
             @click="commands.blockquote"
@@ -127,14 +127,14 @@
             <v-icon color="black">format_quote</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             :class="{ 'is-active': isActive.code_block() }"
             @click="commands.code_block"
           >
             <v-icon color="black">code</v-icon>
           </button>
-          <button
+          <button type='button'
             class="menubar__button"
             @click="showImageDialog = true"
           >
@@ -142,7 +142,7 @@
           </button>
           <v-menu offset-y v-model="tablePanel">
 
-            <button
+            <button type='button'
               :class="{'menubar__button':true,'common-over': tablePanel}"
               slot="activator"
             >
@@ -169,63 +169,63 @@
               </v-card-text>
             </v-card>
           </v-menu>
-          <button
+          <button type='button'
             class="menubar__button"
             @click="commands.undo"
           >
             <v-icon color="black">undo</v-icon>
           </button>
 
-          <button
+          <button type='button'
             class="menubar__button"
             @click="commands.redo"
           >
             <v-icon color="black">redo</v-icon>
           </button>
           <div v-if="isActive.table()">
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.deleteTable"
             >
               <icon name="delete_table"/>
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.addColumnBefore"
             >
               <icon name="add_col_before" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.addColumnAfter"
             >
               <icon name="add_col_after" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.deleteColumn"
             >
               <icon name="delete_col" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.addRowBefore"
             >
               <icon name="add_row_before" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.addRowAfter"
             >
               <icon name="add_row_after" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.deleteRow"
             >
               <icon name="delete_row" />
             </button>
-            <button
+            <button type='button'
               class="menubar__button table_button"
               @click="commands.toggleCellMerge"
             >
