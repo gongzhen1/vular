@@ -63,6 +63,7 @@ class ElementNode {
     
     this.dragstartHandler(event, this)
   }
+  
 
   //$emit('removeAllPlaceholder')
   //parent.insertPlaceholderBefore
