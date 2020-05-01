@@ -1,4 +1,4 @@
-Vular， 基于Vuetify跟Laravel实现的，拼插式应用集成框架。想拼积木一样，拼插你的应该用。  
+Vular， 基于Vuetify跟Laravel实现的，拼插式应用集成框架。像拼积木一样，拼插你的应该用。  
 安装：
 复制：.env, composer.json, app.php, auth.php, filesystems.php
 
