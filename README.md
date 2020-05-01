@@ -1,3 +1,4 @@
+Vular， 基于Vuetify跟Laravel实现的，拼插式应用集成框架。想拼积木一样，拼插你的应该用。  
 安装：
 复制：.env, composer.json, app.php, auth.php, filesystems.php
 
@@ -11,6 +12,4 @@ php artisan vular:install
 php artisan vendor:publish --provider="Water\Vular\Providers\VularServiceProvider" --force
 
 Vuetify + Laravel开发的应用程序框架。
-本程序正在测试，上传，请不要下载。
-
-test...,Please don't download.
+本程序正在改版，请不要下载。
